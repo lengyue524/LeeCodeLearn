@@ -56,15 +56,20 @@ class Solution {
 //            return 0;
 //        }
 //    }
-
+    // 滚动数组
     public int fib(int n) {
-        if (n > 1) {
-            return fib(n - 1) + fib(n - 2);
-        } else if (n == 1) {
-            return 1;
-        } else {
-            return 0;
+        if (n < 2) {
+            return n;
         }
+        int p = 0;
+        int q = 1;
+        int r = 1;
+        for (int i = 2; i < n; i++) {
+            p = q;
+            q = r;
+            r = p + q;
+        }
+        return r;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
