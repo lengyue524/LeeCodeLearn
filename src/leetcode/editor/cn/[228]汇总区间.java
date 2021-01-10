@@ -80,10 +80,11 @@ class Solution {
         int start = 0;
         for (int i = 0; i < nums.length; i++) {
             if (i >= nums.length - 1 || nums[i] + 1 != nums[i + 1]) {
+                StringBuilder builder = new StringBuilder();
                 if (start == i) {
-                    result.add("" + nums[i]);
+                    result.add(builder.append(nums[i]).toString());
                 } else {
-                    result.add(nums[start] + "->" + nums[i]);
+                    result.add(builder.append(nums[start]).append("->").append(nums[i]).toString());
                 }
                 start = i + 1;
             }
